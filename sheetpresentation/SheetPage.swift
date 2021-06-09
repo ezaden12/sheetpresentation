@@ -28,15 +28,17 @@ class SheetPage: UITableViewController {
         view.backgroundColor = .secondarySystemBackground
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
-        APIService().getPosts { result in
+        fetchData()
+    }
+
+    func fetchData() {
+        async {
             do {
-                self.posts = try result.get()
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch {
-                print("error")
+                posts = try await APIService().posts()
+            } catch let error {
+                print("Error: \(error)")
             }
+            self.tableView.reloadData()
         }
     }
 

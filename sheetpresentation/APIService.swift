@@ -38,36 +38,24 @@ struct Post: Codable, Hashable {
 }
 
 
-
 class APIService {
 
     let urlSession = URLSession.shared
 
-    func getPosts(_ completion: @escaping (Result<[Post], Error>) -> Void) {
-        self.execute(.posts, completion: completion)
+    func posts() async throws -> [Post] {
+        return try await self.execute(.posts)
     }
 
-    func execute<T: Decodable>(_ endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> Void) {
+
+    func execute<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
         let urlRequest = endpoint.urlRequest
+        guard let url = urlRequest.url else {
+            throw NSError(domain: "", code: 400, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+        }
 
-        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            do {
-                if let error = error {
-                    completion(.failure(error))
-                    return
-                }
+        let data = try await urlSession.data(with: url)
 
-                guard let data = data else {
-                    preconditionFailure("No error was received but we also don't have data...")
-                }
-
-                let decodedObject = try JSONDecoder().decode(T.self, from: data)
-
-                completion(.success(decodedObject))
-            } catch {
-                completion(.failure(error))
-            }
-        }.resume()
-
+        let decodedData = try JSONDecoder().decode(T.self, from: data)
+        return decodedData
     }
 }

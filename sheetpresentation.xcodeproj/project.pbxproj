@@ -14,6 +14,7 @@
 		FCD5386A266F6BAE005F7BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD53868266F6BAE005F7BBF /* LaunchScreen.storyboard */; };
 		FCD53872266F6DDB005F7BBF /* SheetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD53871266F6DDB005F7BBF /* SheetPage.swift */; };
 		FCD53874266F7A33005F7BBF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD53873266F7A33005F7BBF /* APIService.swift */; };
+		FCD538762670524E005F7BBF /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD538752670524E005F7BBF /* URLSession+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FCD5386B266F6BAE005F7BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCD53871266F6DDB005F7BBF /* SheetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPage.swift; sourceTree = "<group>"; };
 		FCD53873266F7A33005F7BBF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		FCD538752670524E005F7BBF /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FCD53873266F7A33005F7BBF /* APIService.swift */,
 				FCD53861266F6BAC005F7BBF /* HomeViewController.swift */,
 				FCD53871266F6DDB005F7BBF /* SheetPage.swift */,
+				FCD538752670524E005F7BBF /* URLSession+Extension.swift */,
 				FCD53866266F6BAE005F7BBF /* Assets.xcassets */,
 				FCD53868266F6BAE005F7BBF /* LaunchScreen.storyboard */,
 				FCD5386B266F6BAE005F7BBF /* Info.plist */,
@@ -142,6 +145,7 @@
 			files = (
 				FCD53872266F6DDB005F7BBF /* SheetPage.swift in Sources */,
 				FCD53874266F7A33005F7BBF /* APIService.swift in Sources */,
+				FCD538762670524E005F7BBF /* URLSession+Extension.swift in Sources */,
 				FCD53862266F6BAC005F7BBF /* HomeViewController.swift in Sources */,
 				FCD5385E266F6BAC005F7BBF /* AppDelegate.swift in Sources */,
 				FCD53860266F6BAC005F7BBF /* SceneDelegate.swift in Sources */,
